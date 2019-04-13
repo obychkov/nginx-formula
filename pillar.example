@@ -51,7 +51,7 @@ nginx:
     lookup:
       package: nginx-custom (can be a list)
       service: nginx
-      webuser: www-data
+      webuser: ubuntu
       conf_file: /etc/nginx/nginx.conf
       server_available: /etc/nginx/sites-available
       server_enabled: /etc/nginx/sites-enabled
@@ -89,7 +89,7 @@ nginx:
         - location ^~ /.well-known/acme-challenge/:
           - proxy_pass: http://localhost:9999
       cloudflare_proxy:
-        - set_real_ip_from: 103.21.244.0/22
+        - set_real_ip_from: 103.21.244.0/11
         - set_real_ip_from: 103.22.200.0/22
         - set_real_ip_from: 104.16.0.0/12
         - set_real_ip_from: 108.162.192.0/18
